@@ -1,7 +1,16 @@
 import './App.css';
+import Boton from './components/Boton';
 import Logo from './images/freecodecamp-logo.png'
 
 function App() {
+
+  const contarClick = ()=> {
+    console.log("Diste click");
+  }
+  const reiniciarContador = ()=> {
+    console.log("Reiniciando");
+  }
+
   return (
     <div className="App">
       <div className='freecodecamp-logo-contenedor'>
@@ -9,6 +18,18 @@ function App() {
         className='freecodecamp-logo'
         src={Logo}
         alt='logo de freecodecamp'
+        />
+      </div>
+      <div className='contenedor-principal'>
+        <Boton 
+        texto="Click"
+        esBotonDeClick={true}
+        handleClick={contarClick}
+        />
+        <Boton 
+        texto="Reset"
+        esBotonDeClick={false}
+        handleClick={reiniciarContador}
         />
       </div>
     </div>
